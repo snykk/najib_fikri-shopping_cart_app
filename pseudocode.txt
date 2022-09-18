@@ -1,0 +1,78 @@
+// simple program to make a shopping cart application based on console/cli
+
+STORE "shopping_cart" AS LIST WITH emtpy list
+STORE "quantity" AS NUMBER WITH value 0
+
+FUNCTION showMenu() 
+    DISPLAY "--> Welcome to simple todo list application <--"
+    DISPLAY "Menu: "
+    DISPLAY "1. Shows the product list"
+    DISPLAY "2. Add product to cart"
+    DISPLAY "3. Stop the program"
+
+END FUNCTION
+
+
+FUNCTION shoppingCartList()
+    CLEAR console // to clear up terminal
+
+    IF length of shopping_cart is more than 0
+        DISPLAY "--> Shopping Cart List <--"
+
+        STORE "index" AS NUMBER WITH value 0
+
+        WHILE "index" LESS THAN shopping_cart length
+             DISPLAY shopping_cart["index"]
+             STORE "index" WITH "index" PLUS 1
+ 
+        END WHILE
+    ELSE 
+        DISPLAY "Shopping cart is empy for right now"
+    END IF
+
+END FUNCTION
+
+
+FUNCTION addProductToCart()
+    CLEAR console 
+    CALL shoppingCartList()
+
+    DISPLAY "Insert product name to store in shopping cart"
+    READ the input of user then STORE in "new_product"
+
+    APPEND "shopping_cart" WITH "new_product"
+    STORE "quantity" WITH "quantity" PLUS 1
+
+    CLEAR console 
+    DISPLAY "Product successfully added to cart"
+    CALL shoppingCartList()
+
+    DISPLAY "Enter..."
+    READ temp_var
+
+END FUNCTION
+
+
+WHILE TRUE
+    CLEAR console // to clear up the terminal
+    CALL showMenu() // to show the available menu
+
+    DISPLAY "Select the menu"
+    DISPLAY "[1][2][3] ~>"
+    READ the input of user then STORE in variable userChoice
+
+    IF userChoice is equal to "1"
+        CALL shoppingCartList() // to show all recent product in cart
+
+    ELSE IF userChoice is equal to "2"
+        CALL addProductToCart() // to add new product to cart
+
+    ELSE IF userChoice is equal to "3"
+        DISPLAY "Program terminated by user"
+        EXIT PROGRAM
+
+    ELSE 
+        DISPLAY "make sure your input is correct"
+    END IF
+
+END WHILE
