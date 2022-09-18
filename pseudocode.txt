@@ -10,6 +10,26 @@ FUNCTION showMenu()
 END FUNCTION
 
 
+FUNCTION shoppingCartList()
+    CLEAR console // to clear up terminal
+
+    IF length of shopping_cart is more than 0
+        DISPLAY "--> Shopping Cart List <--"
+
+        STORE "index" AS NUMBER WITH value 0
+
+        WHILE "index" LESS THAN shopping_cart length
+             DISPLAY shopping_cart["index"]
+             STORE "index" WITH "index" PLUS 1
+ 
+        END WHILE
+    ELSE 
+        DISPLAY "Shopping cart is empy for right now"
+    END IF
+
+END FUNCTION
+
+
 WHILE TRUE
     CLEAR console // to clear up the terminal
     CALL showMenu() // to show the available menu
@@ -30,5 +50,6 @@ WHILE TRUE
 
     ELSE 
         DISPLAY "make sure your input is correct"
+    END IF
 
 END WHILE
