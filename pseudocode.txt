@@ -1,0 +1,13 @@
+// simple program to make a shopping cart application based on console/cli
+
+FUNCTION showMenu() 
+    DISPLAY "--> Welcome to simple todo list application <--"
+    DISPLAY "Menu: "
+    DISPLAY "1. Shows the product list"
+    DISPLAY "2. Add product to cart"
+    DISPLAY "3. Stop the program"
+
+END FUNCTION
+
+
+CALL showMenu() // to show the available menu
