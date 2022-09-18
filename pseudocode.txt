@@ -10,4 +10,23 @@ FUNCTION showMenu()
 END FUNCTION
 
 
-CALL showMenu() // to show the available menu
+WHILE TRUE
+    CLEAR console // to clear up the terminal
+    CALL showMenu() // to show the available menu
+
+    DISPLAY "Select the menu"
+    DISPLAY "[1][2][3] ~>"
+    READ the input of user then STORE in variable userChoice
+
+    IF userChoice is equal to "1"
+
+    ELSE IF userChoice is equal to "2"
+
+    ELSE IF userChoice is equal to "3"
+        DISPLAY "Program terminated by user"
+        EXIT PROGRAM
+
+    ELSE 
+        DISPLAY "make sure your input is correct"
+
+END WHILE
