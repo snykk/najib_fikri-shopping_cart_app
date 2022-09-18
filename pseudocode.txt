@@ -30,6 +30,26 @@ FUNCTION shoppingCartList()
 END FUNCTION
 
 
+FUNCTION addProductToCart()
+    CLEAR console 
+    CALL shoppingCartList()
+
+    DISPLAY "Insert product name to store in shopping cart"
+    READ the input of user then STORE in "new_product"
+
+    APPEND "shopping_cart" WITH "new_product"
+    STORE "quantity" WITH "quantity" PLUS 1
+
+    CLEAR console 
+    DISPLAY "Product successfully added to cart"
+    CALL shoppingCartList()
+
+    DISPLAY "Enter..."
+    READ temp_var
+
+END FUNCTION
+
+
 WHILE TRUE
     CLEAR console // to clear up the terminal
     CALL showMenu() // to show the available menu
