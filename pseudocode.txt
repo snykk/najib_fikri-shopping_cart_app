@@ -1,5 +1,8 @@
 // simple program to make a shopping cart application based on console/cli
 
+STORE "shopping_cart" AS LIST WITH emtpy list
+STORE "quantity" AS NUMBER WITH value 0
+
 FUNCTION showMenu() 
     DISPLAY "--> Welcome to simple todo list application <--"
     DISPLAY "Menu: "
