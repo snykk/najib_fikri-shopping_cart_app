@@ -19,8 +19,10 @@ WHILE TRUE
     READ the input of user then STORE in variable userChoice
 
     IF userChoice is equal to "1"
+        CALL shoppingCartList() // to show all recent product in cart
 
     ELSE IF userChoice is equal to "2"
+        CALL addProductToCart() // to add new product to cart
 
     ELSE IF userChoice is equal to "3"
         DISPLAY "Program terminated by user"
